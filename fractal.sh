@@ -13,7 +13,7 @@ matrix[$rows,$cols]="_"
 done
 done
 MAX=$NROWS
-mid_point=`echo "scale=0;$NCOLS/2"|bc -l`
+mid_point=`echo "scale=0;$NCOLS/2 - 1"|bc -l`
 init=1
 function update() {
 mp_array=$@
@@ -62,7 +62,7 @@ fi
 fi
 }
 
-update 49
+update $mid_point
 
 for nrows in $(seq 0 $(( $NROWS - 1 )))
 do
